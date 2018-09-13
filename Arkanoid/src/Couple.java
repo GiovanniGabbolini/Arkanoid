@@ -10,13 +10,13 @@ public class Couple <T,E> {
 		this.e = e;
 	}
 	
-	public T getT() {
+	public T getFirst() {
 		return t;
 	}
 	public void setT(T t) {
 		this.t = t;
 	}
-	public E getE() {
+	public E getSecond() {
 		return e;
 	}
 	public void setE(E e) {

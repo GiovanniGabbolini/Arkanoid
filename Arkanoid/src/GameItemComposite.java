@@ -31,5 +31,5 @@ public class GameItemComposite implements IGameItem {
 	public void setState(IModelGameItem gameItemModel) {
 		this.gameItemModel = gameItemModel;
 	}
-
+	
 }

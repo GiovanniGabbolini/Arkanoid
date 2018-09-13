@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class ModelGameItem implements IModelGameItem{
 
-	private int x, y, vx, vy, ax, ay;
-	private ArrayList<Couple<Integer, Integer>> box;
+	private double x, y, vx, vy, ax, ay;
+	private ShapeBox box;
 	
-	public ModelGameItem(int x, int y, int vx, int vy, ArrayList<Couple<Integer, Integer>> box, int ax, int ay) {
+	public ModelGameItem(double x, double y, double vx, double vy, ShapeBox box, double ax, double ay) {
 		super();
 		this.x = x;
 		this.y = y;
@@ -16,59 +16,59 @@ public class ModelGameItem implements IModelGameItem{
 		this.ay = ay;
 	}
 
-	public int getAx() {
+	public double getAx() {
 		return ax;
 	}
 
-	public void setAx(int ax) {
+	public void setAx(double ax) {
 		this.ax = ax;
 	}
 
-	public int getAy() {
+	public double getAy() {
 		return ay;
 	}
 
-	public void setAy(int ay) {
+	public void setAy(double ay) {
 		this.ay = ay;
 	}
 	
-	public int getX() {
+	public double getX() {
 		return x;
 	}
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 	
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 	
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 	
-	public int getVx() {
+	public double getVx() {
 		return vx;
 	}
 	
-	public void setVx(int vx) {
+	public void setVx(double vx) {
 		this.vx = vx;
 	}
 	
-	public int getVy() {
+	public double getVy() {
 		return vy;
 	}
 	
-	public void setVy(int vy) {
+	public void setVy(double vy) {
 		this.vy = vy;
 	}
 	
-	public ArrayList<Couple<Integer, Integer>> getBox() {
+	public ShapeBox getBox() {
 		return box;
 	}
 	
-	public void setBox(ArrayList<Couple<Integer, Integer>> box) {
+	public void setBox(ShapeBox box) {
 		this.box = box;
 	}
-	
+
 }

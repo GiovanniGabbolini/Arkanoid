@@ -10,76 +10,76 @@ public class ModelGameItemDecoratorPositionObservable extends AbstractObservable
 	}
 
 	@Override
-	public int getAx() {
+	public double getAx() {
 		return modelGameItem.getAx();
 	}
 
 	@Override
-	public void setAx(int ax) {
+	public void setAx(double ax) {
 		modelGameItem.setAx(ax);
 	}
 
 	@Override
-	public int getAy() {
+	public double getAy() {
 		return modelGameItem.getAy();
 	}
 
 	@Override
-	public void setAy(int ay) {
+	public void setAy(double ay) {
 		modelGameItem.setAy(ay);
 	}
 
 	@Override
-	public int getX() {
+	public double getX() {
 		return modelGameItem.getX();
 	}
 
 	@Override
-	public void setX(int x) {
+	public void setX(double x) {
 		if (modelGameItem.getX() != x)
 			ack();
 		modelGameItem.setX(x);
 	}
 
 	@Override
-	public int getY() {
+	public double getY() {
 		return modelGameItem.getY();
 	}
 
 	@Override
-	public void setY(int y) {
+	public void setY(double y) {
 		if (modelGameItem.getY() != y)
 			ack();
 		modelGameItem.setX(y);
 	}
 
 	@Override
-	public int getVx() {
+	public double getVx() {
 		return modelGameItem.getVx();
 	}
 
 	@Override
-	public void setVx(int vx) {
+	public void setVx(double vx) {
 		modelGameItem.setVx(vx);
 	}
 
 	@Override
-	public int getVy() {
+	public double getVy() {
 		return modelGameItem.getVy();
 	}
 
 	@Override
-	public void setVy(int vy) {
+	public void setVy(double vy) {
 		modelGameItem.setVy(vy);
 	}
 
 	@Override
-	public ArrayList<Couple<Integer, Integer>> getBox() {
+	public ShapeBox getBox() {
 		return modelGameItem.getBox();
 	}
 
 	@Override
-	public void setBox(ArrayList<Couple<Integer, Integer>> box) {
+	public void setBox(ShapeBox box) {
 		modelGameItem.setBox(box);
 	}
 
