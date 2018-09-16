@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package Main;
 
 public class ModelGameItem implements IModelGameItem{
 

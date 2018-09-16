@@ -1,20 +1,20 @@
-import java.util.ArrayList;
+package Main;
+import java.util.Collection;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class GameItemCollectionManager {
-
-	private ArrayList<IGameItem> gameItems;
+public class GameItemCollisionManager {
+	
+	private Collection<IGameItem> gameItems;
 	private Predicate<IGameItem> checkCollisionStrategy;
 	private Consumer<IGameItem> solveCollisionStrategy;
 	
-	public GameItemCollectionManager(ArrayList<IGameItem> gameItems) {
+	public GameItemCollisionManager(Collection<IGameItem> gameItems, Predicate<IGameItem> checkCollisionStrategy,
+			Consumer<IGameItem> solveCollisionStrategy) {
 		super();
 		this.gameItems = gameItems;
-	}
-
-	public ArrayList<IGameItem> getGameItems() {
-		return gameItems;
+		this.checkCollisionStrategy = checkCollisionStrategy;
+		this.solveCollisionStrategy = solveCollisionStrategy;
 	}
 	
 	public boolean checkCollision(IGameItem gameItem) {
@@ -24,4 +24,5 @@ public class GameItemCollectionManager {
 	public void solveCollision(IGameItem gameItem) {
 		solveCollisionStrategy.accept(gameItem);
 	}
+	
 }

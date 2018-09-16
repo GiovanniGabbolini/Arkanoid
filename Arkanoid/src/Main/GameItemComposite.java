@@ -1,3 +1,5 @@
+package Main;
+
 import java.util.function.Consumer;
 
 public class GameItemComposite implements IGameItem {
@@ -9,6 +11,7 @@ public class GameItemComposite implements IGameItem {
 	public GameItemComposite(IModelGameItem gameItemModel, Consumer<IGameItem> tickStrategy, Consumer<IGameItem> drawStrategy) {
 		super();
 		this.gameItemModel = gameItemModel;
+		this.tickStrategy = tickStrategy;
 		this.drawStrategy = drawStrategy;
 	}
 

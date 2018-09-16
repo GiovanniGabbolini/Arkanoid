@@ -1,11 +1,13 @@
-import java.util.ArrayList;
+package Main;
+
+import java.util.Collection;
 
 public class ModelGameItemDecoratorPositionObservable extends AbstractObservable implements IModelGameItem {
 
 	private IModelGameItem modelGameItem;
 	
-	public ModelGameItemDecoratorPositionObservable(IModelGameItem modelGameItem) {
-		super();
+	public ModelGameItemDecoratorPositionObservable(IModelGameItem modelGameItem, Collection<IObserver> observed) {
+		super(observed);
 		this.modelGameItem = modelGameItem;
 	}
 
