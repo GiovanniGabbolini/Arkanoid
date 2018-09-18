@@ -1,13 +1,13 @@
 package Main;
-import java.util.Collection;
+import java.util.ArrayList;
 
 public abstract class AbstractObservable {
 
-	private Collection<IObserver> observed;
+	private ArrayList<IObserver> observed;
 
-	public AbstractObservable(Collection<IObserver> observed) {
+	public AbstractObservable() {
 		super();
-		this.observed = observed;
+		observed = new ArrayList<>();
 	}
 
 	public void add(IObserver obs) {

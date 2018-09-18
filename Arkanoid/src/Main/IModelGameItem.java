@@ -26,8 +26,8 @@ public interface IModelGameItem {
 	
 	public void setVy(double vy);
 	
-	public ShapeBox getBox();
+	public IShapeBox getBox();
 	
-	public void setBox(ShapeBox shapeBox);
+	public void setBox(IShapeBox shapeBox);
 	
 }

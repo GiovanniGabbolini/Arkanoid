@@ -2,18 +2,15 @@ package Desktop;
 
 import java.util.ArrayList;
 import java.util.Timer;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
+import Main.BoardCollisionObserver;
 import Main.ConcreteReferenceFrameConvertor;
 import Main.GameItemComposite;
 import Main.GameItemStraightLineProgressionTickStrategy;
-import Main.IModelGameItem;
-import Main.IObserver;
 import Main.ModelGameItem;
-import Main.ShapeBox;
-import Main.TimerWrapper;
+import Main.ModelGameItemDecoratorPositionObservable;
+import Main.TimerWrapperObservable;
 
 public class ProvaForm {
 
@@ -21,10 +18,9 @@ public class ProvaForm {
 	ProvaCustomPanel mainPanel;
 	
 	public ProvaForm() {
-		ArrayList<IObserver> observer = new ArrayList<>();
 		
-		TimerWrapper timer = new TimerWrapper(new Timer(), observer);
-		timer.start(0, 100);
+		TimerWrapperObservable timer = new TimerWrapperObservable(new Timer());
+		timer.start(0, 1);
 		
 		myFrame = new JFrame("Frame Title");
 		myFrame.setSize(400, 400);
@@ -32,19 +28,22 @@ public class ProvaForm {
 		
 		Graphics2DHandler g2DHandler = new Graphics2DHandler();
 		
-		ArrayList<GameItemComposite> items = new ArrayList<>();
-		GameItemComposite item = null;
+		ModelGameItemDecoratorPositionObservable model = new ModelGameItemDecoratorPositionObservable(
+				new ModelGameItem(0.1, 0.1, 0.001, 0.001, null, 0, 0));
+		BoardCollisionObserver boardObs = new BoardCollisionObserver(model);
+		boardObs.startObserving();
 		
-		item = new GameItemComposite(
-				new ModelGameItem(0.1, 0.1, 0.01, 0.01, null, 0, 0), 
+		ArrayList<GameItemComposite> items = new ArrayList<>();
+		GameItemComposite item = new GameItemComposite(model, 
 				new GameItemStraightLineProgressionTickStrategy(),
 				new DrawGameItemCircleStrategyDesktop(
-						new ConcreteReferenceFrameConvertor(100, 100), g2DHandler));
+					new ConcreteReferenceFrameConvertor(100, 100), g2DHandler));
 		items.add(item);
 		
 		mainPanel = new ProvaCustomPanel(timer, items, g2DHandler);
-		mainPanel.startObserving();
+		mainPanel.startTimer();
 		myFrame.getContentPane().add(mainPanel);
+		
 	}
 	
 }

@@ -4,23 +4,23 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.Collection;
 import javax.swing.JPanel;
-import Main.AbstractObservable;
+import Main.TimerWrapperObservable;
 import Main.GameItemComposite;
 
 public class ProvaCustomPanel extends JPanel implements Main.IObserver{
 	
-	private AbstractObservable obs; // the timer
+	private TimerWrapperObservable timer; // the timer
 	private Collection<GameItemComposite> items;
 	private Graphics2DHandler g2DHandler;
 	
-	public ProvaCustomPanel(AbstractObservable obs, Collection<GameItemComposite> items, Graphics2DHandler g2DHandler) {
-		this.obs = obs;
+	public ProvaCustomPanel(TimerWrapperObservable timer, Collection<GameItemComposite> items, Graphics2DHandler g2DHandler) {
+		this.timer = timer;
 		this.items = items;
 		this.g2DHandler = g2DHandler;
 	}
 	
-	public void startObserving() {
-		this.obs.add(this);
+	public void startTimer() {
+		this.timer.add(this);
 	}
 	
 	@Override

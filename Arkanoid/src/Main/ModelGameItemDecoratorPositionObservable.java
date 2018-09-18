@@ -1,13 +1,11 @@
 package Main;
 
-import java.util.Collection;
-
 public class ModelGameItemDecoratorPositionObservable extends AbstractObservable implements IModelGameItem {
 
 	private IModelGameItem modelGameItem;
 	
-	public ModelGameItemDecoratorPositionObservable(IModelGameItem modelGameItem, Collection<IObserver> observed) {
-		super(observed);
+	public ModelGameItemDecoratorPositionObservable(IModelGameItem modelGameItem) {
+		super();
 		this.modelGameItem = modelGameItem;
 	}
 
@@ -76,12 +74,12 @@ public class ModelGameItemDecoratorPositionObservable extends AbstractObservable
 	}
 
 	@Override
-	public ShapeBox getBox() {
+	public IShapeBox getBox() {
 		return modelGameItem.getBox();
 	}
 
 	@Override
-	public void setBox(ShapeBox box) {
+	public void setBox(IShapeBox box) {
 		modelGameItem.setBox(box);
 	}
 

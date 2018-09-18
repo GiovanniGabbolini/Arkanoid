@@ -25,4 +25,12 @@ public class ConcreteReferenceFrameConvertor {
 		return (int)Math.floor(abstractY * concreteHeight);
 	}
 	
+	public double getAbstractX(int concreteX) {
+		return concreteX / concreteWidth;
+	}
+	
+	public double getAbstractY(int concreteY) {
+		return concreteY / concreteHeight;
+	}
+	
 }

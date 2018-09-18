@@ -3,9 +3,9 @@ package Main;
 public class ModelGameItem implements IModelGameItem{
 
 	private double x, y, vx, vy, ax, ay;
-	private ShapeBox box;
+	private IShapeBox box;
 	
-	public ModelGameItem(double x, double y, double vx, double vy, ShapeBox box, double ax, double ay) {
+	public ModelGameItem(double x, double y, double vx, double vy, IShapeBox box, double ax, double ay) {
 		super();
 		this.x = x;
 		this.y = y;
@@ -63,11 +63,11 @@ public class ModelGameItem implements IModelGameItem{
 		this.vy = vy;
 	}
 	
-	public ShapeBox getBox() {
+	public IShapeBox getBox() {
 		return box;
 	}
 	
-	public void setBox(ShapeBox box) {
+	public void setBox(IShapeBox box) {
 		this.box = box;
 	}
 
