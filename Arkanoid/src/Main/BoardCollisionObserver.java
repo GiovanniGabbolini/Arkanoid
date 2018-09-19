@@ -7,6 +7,7 @@ public class BoardCollisionObserver implements IObserver {
 	public BoardCollisionObserver(ModelGameItemDecoratorPositionObservable obs) {
 		super();
 		this.obs = obs;
+		obs.add(this);
 	}
 
 	@Override
@@ -15,10 +16,6 @@ public class BoardCollisionObserver implements IObserver {
 			obs.setVx(-obs.getVx());
 		if(obs.getY() + obs.getBox().getHeight() >= 1 || obs.getY() < 0)
 			obs.setVy(-obs.getVy());			
-	}
-	
-	public void startObserving() {
-		obs.add(this);
 	}
 			
 }

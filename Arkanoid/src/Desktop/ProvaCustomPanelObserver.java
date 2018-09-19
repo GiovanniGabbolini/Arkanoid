@@ -7,13 +7,13 @@ import javax.swing.JPanel;
 import Main.TimerWrapperObservable;
 import Main.GameItemComposite;
 
-public class ProvaCustomPanel extends JPanel implements Main.IObserver{
+public class ProvaCustomPanelObserver extends JPanel implements Main.IObserver{
 	
 	private TimerWrapperObservable timer; // the timer
 	private Collection<GameItemComposite> items;
 	private Graphics2DHandler g2DHandler;
 	
-	public ProvaCustomPanel(TimerWrapperObservable timer, Collection<GameItemComposite> items, Graphics2DHandler g2DHandler) {
+	public ProvaCustomPanelObserver(TimerWrapperObservable timer, Collection<GameItemComposite> items, Graphics2DHandler g2DHandler) {
 		this.timer = timer;
 		this.items = items;
 		this.g2DHandler = g2DHandler;
