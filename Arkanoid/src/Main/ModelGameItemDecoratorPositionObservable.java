@@ -36,9 +36,10 @@ public class ModelGameItemDecoratorPositionObservable extends AbstractObservable
 
 	@Override
 	public void setX(double x) {
-		if (modelGameItem.getX() != x)
-			ack();
+		double old = modelGameItem.getX();
 		modelGameItem.setX(x);
+		if (old != x)
+			ack();
 	}
 
 	@Override
@@ -48,9 +49,10 @@ public class ModelGameItemDecoratorPositionObservable extends AbstractObservable
 
 	@Override
 	public void setY(double y) {
-		if (modelGameItem.getY() != y)
+		double old = modelGameItem.getY();
+		modelGameItem.setY(y);
+		if (old != y)
 			ack();
-		modelGameItem.setX(y);
 	}
 
 	@Override

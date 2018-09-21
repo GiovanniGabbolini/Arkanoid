@@ -19,9 +19,10 @@ public class DrawGameItemCircleStrategyDesktop implements Consumer<IGameItem> {
 	@Override
 	public void accept(IGameItem t) {
 		Graphics2D g2D = g2DHandler.getPen();
-		g2D.drawOval(convertor.getConcreteX(t.getState().getX()), 
-						convertor.getConcreteY(t.getState().getY()),
-							100, 100);
+		g2D.drawOval((int)Math.floor(t.getState().getX()), 
+					 	(int)Math.floor(t.getState().getY()),
+							 (int)Math.floor(t.getState().getBox().getWidth()),
+								(int)Math.floor(t.getState().getBox().getHeight()));
 	}
 
 }

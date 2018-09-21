@@ -6,10 +6,12 @@ import javax.swing.JFrame;
 
 import Main.BoardCollisionObserver;
 import Main.ConcreteReferenceFrameConvertor;
+import Main.Couple;
 import Main.GameItemComposite;
 import Main.GameItemStraightLineProgressionTickStrategy;
 import Main.ModelGameItem;
 import Main.ModelGameItemDecoratorPositionObservable;
+import Main.ShapeBoxBasedOnPolygon;
 import Main.TimerWrapperObservable;
 
 public class ProvaForm {
@@ -18,25 +20,34 @@ public class ProvaForm {
 	ProvaCustomPanelObserver mainPanel;
 	
 	public ProvaForm() {
+		int formWidth = 400, formHeigth = 400;
 		
 		TimerWrapperObservable timer = new TimerWrapperObservable(new Timer());
 		timer.start(0, 1);
 		
 		Graphics2DHandler g2DHandler = new Graphics2DHandler();
 		
+		ArrayList<Couple<Integer, Integer>> couples = new ArrayList<>();
+		couples.add(new Couple<Integer, Integer>(10, 10));
+		couples.add(new Couple<Integer, Integer>(10, 20));
+		couples.add(new Couple<Integer, Integer>(20, 20));
+		couples.add(new Couple<Integer, Integer>(20, 10));
+		ShapeBoxBasedOnPolygon box = new ShapeBoxBasedOnPolygon(couples);
+		
 		ModelGameItemDecoratorPositionObservable model = new ModelGameItemDecoratorPositionObservable(
-				new ModelGameItem(0.1, 0.1, 0.001, 0.001, null, 0, 0));
-		BoardCollisionObserver boardObs = new BoardCollisionObserver(model);
+				new ModelGameItem(100, 10, 0.1, 0.1, box, 0, 0));
+		BoardCollisionObserver boardObsX = new BoardCollisionObserver(model, new ConcreteReferenceFrameConvertor(formWidth, formHeigth));
+
 		
 		ArrayList<GameItemComposite> items = new ArrayList<>();
 		GameItemComposite item = new GameItemComposite(model, 
 				new GameItemStraightLineProgressionTickStrategy(),
 				new DrawGameItemCircleStrategyDesktop(
-					new ConcreteReferenceFrameConvertor(100, 100), g2DHandler));
+					new ConcreteReferenceFrameConvertor(formWidth, formHeigth), g2DHandler));
 		items.add(item);
 		
 		myFrame = new JFrame("Frame Title");
-		myFrame.setSize(400, 400);
+		myFrame.setSize(formWidth, formHeigth);
 		myFrame.setVisible(true);
 		
 		mainPanel = new ProvaCustomPanelObserver(timer, items, g2DHandler);

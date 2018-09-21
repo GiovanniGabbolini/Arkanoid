@@ -9,7 +9,7 @@ package Main;
 
 public class ConcreteReferenceFrameConvertor {
 
-	private int concreteWidth, concreteHeight;
+	private double concreteWidth, concreteHeight;
 
 	public ConcreteReferenceFrameConvertor(int concreteWidth, int concreteHeight) {
 		super();
@@ -33,4 +33,11 @@ public class ConcreteReferenceFrameConvertor {
 		return concreteY / concreteHeight;
 	}
 	
+	public double getConcreteWidth() {
+		return concreteWidth;
+	}
+
+	public double getConcreteHeight() {
+		return concreteHeight;
+	}
 }
