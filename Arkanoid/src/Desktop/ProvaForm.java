@@ -18,7 +18,7 @@ public class ProvaForm {
 
 	JFrame myFrame;
 	ProvaCustomPanelObserver mainPanel;
-	
+
 	public ProvaForm() {
 		int formWidth = 400, formHeigth = 400;
 		
@@ -27,17 +27,16 @@ public class ProvaForm {
 		
 		Graphics2DHandler g2DHandler = new Graphics2DHandler();
 		
-		ArrayList<Couple<Integer, Integer>> couples = new ArrayList<>();
-		couples.add(new Couple<Integer, Integer>(10, 10));
-		couples.add(new Couple<Integer, Integer>(10, 20));
-		couples.add(new Couple<Integer, Integer>(20, 20));
-		couples.add(new Couple<Integer, Integer>(20, 10));
+		ArrayList<Couple<Double, Double>> couples = new ArrayList<>();
+		couples.add(new Couple<Double, Double>(10.0, 10.0));
+		couples.add(new Couple<Double, Double>(10.0, 20.0));
+		couples.add(new Couple<Double, Double>(20.0, 20.0));
+		couples.add(new Couple<Double, Double>(20.0, 10.0));
 		ShapeBoxBasedOnPolygon box = new ShapeBoxBasedOnPolygon(couples);
 		
 		ModelGameItemDecoratorPositionObservable model = new ModelGameItemDecoratorPositionObservable(
 				new ModelGameItem(100, 10, 0.1, 0.1, box, 0, 0));
 		BoardCollisionObserver boardObsX = new BoardCollisionObserver(model, new ConcreteReferenceFrameConvertor(formWidth, formHeigth));
-
 		
 		ArrayList<GameItemComposite> items = new ArrayList<>();
 		GameItemComposite item = new GameItemComposite(model, 

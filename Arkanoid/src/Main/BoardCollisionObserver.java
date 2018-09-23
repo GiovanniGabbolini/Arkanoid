@@ -15,12 +15,12 @@ public class BoardCollisionObserver implements IObserver {
 
 	@Override
 	public void ack() {
-		if(obs.getX() + obs.getBox().getWidth() >= convertor.getConcreteWidth() || obs.getX() < 0)
+		if(obs.getX() + obs.getShapeBox().getWidth() >= convertor.getConcreteWidth() || obs.getX() < 0)
 			if (!last.equals("x")) {
 				obs.setVx(-obs.getVx());
 				last = "x";
 			}
-		if(obs.getY() + obs.getBox().getHeight() >= convertor.getConcreteHeight() || obs.getY() < 0)
+		if(obs.getY() + obs.getShapeBox().getHeight() >= convertor.getConcreteHeight() || obs.getY() < 0)
 			if (!last.equals("y")) {
 				obs.setVy(-obs.getVy());
 				last = "y";

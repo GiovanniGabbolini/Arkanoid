@@ -7,6 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({ConvertorAbstractToConcrete.class,
 				ConvertorConcreteToAbstract.class,
-				ShapeBoxPolygon.class})
+				ShapeBoxPolygonDimensions.class,
+				ShapeBoxPolygonContains.class})
 public class AllTests {
 }

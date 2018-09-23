@@ -76,13 +76,13 @@ public class ModelGameItemDecoratorPositionObservable extends AbstractObservable
 	}
 
 	@Override
-	public IShapeBox getBox() {
-		return modelGameItem.getBox();
+	public IShapeBox getShapeBox() {
+		return modelGameItem.getShapeBox();
 	}
 
 	@Override
-	public void setBox(IShapeBox box) {
-		modelGameItem.setBox(box);
+	public void setShapeBox(IShapeBox box) {
+		modelGameItem.setShapeBox(box);
 	}
 
 }

@@ -14,13 +14,13 @@ public class Couple <T,E> {
 	public T getFirst() {
 		return t;
 	}
-	public void setT(T t) {
+	public void setFirst(T t) {
 		this.t = t;
 	}
 	public E getSecond() {
 		return e;
 	}
-	public void setE(E e) {
+	public void setSecond(E e) {
 		this.e = e;
 	}
 		

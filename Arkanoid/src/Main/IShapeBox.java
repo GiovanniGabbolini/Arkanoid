@@ -1,14 +1,15 @@
 package Main;
 
-/*
- * this interface should consider that in the model we are dealing with just doubles
- * in order to be indipendent from the referential frame 
- */
+import java.util.Collection;
 
 public interface IShapeBox {
 
+	public Collection<Couple<Double, Double>> getBoxPoints();
+	
 	public double getWidth();
 	
 	public double getHeight();
+	
+	public boolean contains(Couple<Double, Double> couple);
 	
 }

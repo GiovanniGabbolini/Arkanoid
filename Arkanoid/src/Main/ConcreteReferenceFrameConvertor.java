@@ -1,10 +1,10 @@
 package Main;
 
 /*
- * throughout the Main model, position of objects is expressed in doubles
- * from 0 to 1, to be really not dependent from the real width and height of
- * the panel where the objects will be show
- * this class allows to pass to real coordinate specifying width and height
+ * throughout the Main model, position of objects is expressed 
+ * according to the size of the full panel.
+ * in order to avoid the hardcoding of any coordinates, we 
+ * exploit this convertor at the moment of the creation of objects
  */
 
 public class ConcreteReferenceFrameConvertor {

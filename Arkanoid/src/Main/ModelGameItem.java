@@ -63,11 +63,11 @@ public class ModelGameItem implements IModelGameItem{
 		this.vy = vy;
 	}
 	
-	public IShapeBox getBox() {
+	public IShapeBox getShapeBox() {
 		return box;
 	}
 	
-	public void setBox(IShapeBox box) {
+	public void setShapeBox(IShapeBox box) {
 		this.box = box;
 	}
 
